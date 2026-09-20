@@ -1,0 +1,348 @@
+/* ESTILOS GERAIS */ 
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+
+/* Correção de vazamento no celular (Evita rolagem horizontal) */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Garante que o Formulário e Imagens nunca passem da tela */
+img, iframe, video {
+    max-width: 100% !important;
+}
+
+:root { 
+    /* Cores da Identidade PodCuidar & APH */
+    --color-orange: #ff9800;    /* SEPOD */
+    --color-blue: #34bdeb;      /* POD / CAST */
+    --color-lime: #ccff00;      /* CUIDAR / APH / Destaques */
+    --color-red: #ef233c;       /* SEGURO / Emergência */
+
+    /* Estrutura e Fundos */
+    --bg-dark: #0d1b2a;         /* Fundo Principal Escuro */
+    --card-dark: #1b263b;       /* Fundo de Cards/Módulos */
+    --text-light: #ffffff;      /* Texto Branco */
+    --text-gray: #a0aab2;       /* Texto Secundário */
+} 
+
+body { 
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+} 
+
+.container { 
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+} 
+
+/* HEADER */ 
+header { 
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+} 
+
+.nav-container { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.logo { 
+    font-size: 1.5rem;
+    color: var(--text-light);
+} 
+
+.logo i, .logo span { 
+    color: var(--color-lime);
+} 
+
+nav ul { 
+    display: flex;
+    list-style: none;
+} 
+
+nav ul li { 
+    margin-left: 20px;
+} 
+
+nav ul li a { 
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+} 
+
+nav ul li a:hover { 
+    color: var(--color-lime);
+} 
+
+/* HERO SECTION */ 
+.hero { 
+    background: linear-gradient(135deg, var(--card-dark) 0%, var(--bg-dark) 100%);
+    color: var(--text-light);
+    padding: 80px 0;
+} 
+
+.hero-content { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+} 
+
+.hero-text { 
+    flex: 1;
+} 
+
+.badge { 
+    background-color: var(--color-red);
+    color: var(--text-light);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+} 
+
+.hero-text h2 { 
+    font-size: 2.5rem;
+    margin: 15px 0;
+    line-height: 1.2;
+} 
+
+.hero-text p { 
+    color: var(--text-gray);
+    margin-bottom: 25px;
+} 
+
+.platforms p { 
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+} 
+
+.btn-platform { 
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+} 
+
+.btn-platform:hover { 
+    background: var(--color-blue);
+} 
+
+.hero-image { 
+    flex: 1;
+    display: flex;
+    justify-content: center;
+} 
+
+.podcast-card-preview { 
+    background-color: var(--card-dark);
+    border: 2px solid var(--color-lime);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+} 
+
+.icon-big { 
+    font-size: 5rem;
+    color: var(--color-lime);
+    margin-bottom: 15px;
+} 
+
+/* SOBRE */ 
+.sobre { 
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--card-dark);
+} 
+
+.sobre h2 { 
+    color: var(--color-lime);
+    margin-bottom: 20px;
+} 
+
+.sobre p { 
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-light);
+} 
+
+/* EPISÓDIOS */ 
+.episodios { 
+    padding: 60px 0;
+} 
+
+.episodios h2 { 
+    color: var(--text-light);
+    margin-bottom: 30px;
+} 
+
+.episodes-grid { 
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+} 
+
+/* O card de episódio que ajustamos */
+.episode-card { 
+    background-color: var(--card-dark);
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, border-color 0.3s;
+    border: 2px solid var(--color-lime); 
+} 
+
+.episode-card:hover { 
+    transform: translateY(-5px);
+    border-color: var(--color-blue); 
+} 
+
+.ep-img { 
+    background-color: var(--bg-dark);
+    color: var(--color-orange);
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+
+.ep-info { 
+    padding: 25px;
+    flex: 1;
+} 
+
+.ep-number { 
+    color: var(--color-orange);
+    font-weight: bold;
+    font-size: 0.9rem;
+} 
+
+.ep-info h3 { 
+    color: var(--text-light);
+    margin: 5px 0;
+} 
+
+.ep-date { 
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+} 
+
+.audio-player { 
+    margin-top: 15px;
+} 
+
+audio { 
+    width: 100%;
+    outline: none;
+} 
+
+/* FOOTER */ 
+footer { 
+    background-color: #08111b;
+    color: var(--text-light);
+    padding-top: 50px;
+} 
+
+.footer-content { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+} 
+
+.socials a { 
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: 0.3s;
+} 
+
+.socials a:hover { 
+    color: var(--color-lime);
+} 
+
+.footer-bottom { 
+    background-color: #04080e;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+} 
+
+/* RESPONSIVIDADE (PARA CELULAR) */ 
+@media (max-width: 768px) { 
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-content { 
+        flex-direction: column; 
+        text-align: center;
+        gap: 20px;
+    }
+
+    .episode-card { 
+        flex-direction: column;
+    }
+    
+    .ep-img { 
+        width: 100%; 
+        padding: 20px 0;
+    } 
+
+    .footer-content { 
+        flex-direction: column; 
+        gap: 20px; 
+        text-align: center; 
+    } 
+
+    /* Ajuste de títulos para não vazar da tela */
+    .logo, 
+    .hero-text h2, 
+    header h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+        word-wrap: break-word;
+    }
+
+    .bastidores h2, 
+    #bastidores h2,
+    .badge {
+        font-size: 1.2rem !important;
+        max-width: 100%;
+    }
+
+    h1, h2, h3 {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+}
+
+
